@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <title>Desafío Final Front</title>
+    </head>
+    <body>
+          <!-- Este es el elemento fixed (header) -->
+  <nav class="navbar fixed-top navbar-light bg-light shadow-sm p-1 mb-5 bg-white rounded">
+    <div class="container nav-top">
+      <a class="navbar-brand" href="index.html">
+        <i class="pl-1 fab fa-dev" title="dev"></i>
+      </a>
+      <form class="form-inline flex-grow-1 mr-1 mr-lg-5">
+        <input type="hidden" name="utf8" id="" placeholder="" autocomplete="" value="✓">
+        <input class="form-control w-100" type="search" placeholder="Search..." aria-label="Search">
+      </form>
+      <button type="button"
+        class="btn btn-primary shadow-none font-weight-bold mx-2 text-nowrap d-none d-md-block ml-lg-5">Write a
+        post</button>
+      <a class="navbar-brand rounded-circle top-icons p-1 d-flex align-items-center" href="#">
+        <img src="images/post-icon.png" class="rounded-circle" alt="Connect" loading="lazy">
+      </a>
+      <a class="navbar-brand rounded-circle top-icons p-1 d-flex align-items-center" href="#">
+        <img src="images/notification-icon.png" class="rounded-circle" alt="Notifications" loading="lazy">
+      </a>
+      <div class="dropdown">
+        <img src="images/perfil-icon.png" alt="" height="30" width="30" class="rounded-circle ml-3">
+        <div class="dropdown-content rounded border border-dark">
+          <a href="#">NajeraDev <br> @najeradev</a>
+          <a href="#">Dashboard</a>
+          <a href="#">Write a Post</a>
+          <a href="#">Reading list</a>
+          <a href="#">Settings</a>
+          <a href="#">Key Links</a>
+          <a href="#">Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!-- aqui empieza el main y los asides -->
+        <div class= "container-lg">
+           
+                <div class="row">
+        
+                    <div class="d-none d-md-block col-md-1 col-lg-1">
+                        <!-- aqui va el aside izquierdo -->
+                        <aside class="my-stuff-container">
+                            <div class="item">
+                                <span class="icon-span heart rounded-circle px-2 py-1">
+                                    <img src="images/post/small-heart.svg" alt="small heart icon">
+                                </span>
+                                <span class="">2</span>
+                            </div>
+            
+                            <div class="item">
+                                <span class="icon-span horse rounded-circle px-2 py-1">
+                                    <img src="images/post/unicorn.svg" alt="small unicorn icon">
+                                </span>
+                                <span class="">0</span>
+                            </div>
+                            
+                            <div class="item">
+                                <span class="icon-span bookmark rounded-circle px-2 py-1">
+                                    <img src="images/post/save.svg" alt="small icon">
+                                </span>
+                                <span class="">1</span>
+                            </div>
+                            
+                            <div class="item">
+                                <span class="icon-span dots rounded-circle px-2 py-1">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </span>
+                            </div>
+                        </aside>
+
+                    </div>
+                    <div class="col-12 col-md-11 col-lg-8 posts">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade active show" id="pills-feed" role="tabpanel" aria-labelledby="pills-feed-tab">
+                                <div class="card">
+                                    <img class="card-img-top" src="" alt="Card image cap" id="myTopImg">
+                                    <div class="card-body">
+                                        <div class="content-center">
+                                            <h1 class="card-title mt-3" id="mytitlePage"></h1>
+                                            <div class="hashtags mb-3" id="misHashTags">
+                                            </div> 
+                                            <span class=""><img class="profile_min" src="images/aside1/prision-mike.png" alt=""></span>
+                                            <div class="info_personal d-inline ">
+                                                <span class="card-text name"><a class="" id="nombreDeUsuario"></a></span>
+                                                <span class="card-text date"><a class="" id="fechaDelPost"></a></span> 
+                                            </div> 
+
+                                            <div class="content-post mt-2 pt-2">
+                                                <p id="myText"></p>
+
+                                                <div class="d-flex justify-content-between comment-section">
+                                                    <span><h1>Discussion</h1></span>
+                                                    <span class="pt-2"><button type="button" class="btn">Subscribe</button></span>
+                                                </div>
+
+                                                <div class="form-group shadow-textarea mt-4">
+                                                    <label for="exampleFormControlTextarea6">Add to the discussion</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+                                                    <div class="mt-4">
+                                                        <button type="button" class="btn">Submit</button>
+                                                        <button type="button" class="btn">Preview</button>
+                                                    </div>
+                                                </div>
+                                             </div> 
+                                        </div>        
+                                    </div>
+                                </div>
+
+                                <div class="card add_articles">
+                                    <div class="card-body">
+                                                <h1>Read Next</h1>
+
+                                                <div class="card-b-content d-flex justify-content-evenly align-items-center">
+                                                    <span class=""><img class="profile_max" src="images/profile/p6.jpg" alt=""></span>
+                                                    <div class="info_personal_big d-inline-block flex-column">
+                                                        <h3><a class="title_article" href="#">You're right! That's probably simpler.</a></h3>
+                                                        <div class="d-inline-block mini_info">
+                                                            <span class="card-text name"><a class="name_big">Bigin</a></span>
+                                                            <span class="card-text date"><a class="date_big">Aug 16</a></span>
+                                                        </div>
+                                                    </div> 
+                                                </div>                                             
+                                    </div>
+                                    <div class="card-body">                                        
+                                        <div class="card-b-content d-flex justify-content-evenly align-items-center">
+                                            <span class=""><img class="profile_max" src="images/profile/p7.jpg" alt=""></span>
+                                            <div class="info_personal_big d-inline-block flex-column">
+                                                <h3><a class="title_article" href="#">Learning How to Learn Efficiently</a></h3>
+                                                <div class="d-inline-block mini_info">
+                                                    <span class="card-text name"><a class="name_big">Bigin</a></span>
+                                                    <span class="card-text date"><a class="date_big">Aug 16</a></span>
+                                                </div>
+                                            </div> 
+                                        </div>                                             
+                                    </div>
+                                    <div class="card-body">                                        
+                                        <div class="card-b-content d-flex justify-content-evenly align-items-center">
+                                            <span class=""><img class="profile_max" src="images/profile/p10.jpg" alt=""></span>
+                                            <div class="info_personal_big d-inline-block flex-column">
+                                                <h3><a class="title_article" href="#">Must Know: Basic Engineering Principles for Programming</a></h3>
+                                                <div class="d-inline-block mini_info">
+                                                    <span class="card-text name"><a class="name_big">Bigin</a></span>
+                                                    <span class="card-text date"><a class="date_big">Aug 16</a></span>
+                                                </div>
+                                            </div> 
+                                        </div>                                             
+                                    </div>
+                                </div>
+                                <div class="card info_prof">
+                                    <div class="card-body">
+                                            <span class=""><img class="profile_max" src="images/profile/p9.jpg" alt=""></span>
+                                            <span class="personal_name"><a class="">Teresa Holfeld</a></span>
+                                            <div class="info_personal d-inline-block">
+                                                
+                                                <p>Full-stack web developer recently graduated from UPenn LPS Coding Bootcamp. </p> 
+                                            </div> 
+                                            <div class="content-center d-flex justify-content-center m-0">
+                                                <button type="button" class="btn btn-primary w-100 button_bigger">Follow</button>
+                                            </div> 
+                                            <div class="profile_info">
+                                                <p>Work </p>
+                                                <p>Full Stack Web Developer</p> 
+                                                <p>Location</p>
+                                                <p>Colmar, PA</p>
+                                                <p>Work status</p>
+                                                <p>I'm looking for work!</p>
+                                                <p>Joined</p>
+                                                <p>28 de septiembre de 2020</p>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <span class="personal_name"><a class="">More from <span>Teresa Holfeld</span> </a></span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <h1 class="card-title mt-3">Functions, Parameters and Return Values</h1>
+                                            <div class="hashtags">
+                                                <a href=""><span class="crayon">#</span>beginners</a>
+                                                <a href=""><span class="crayon">#</span>codenewbie</a>
+                                                <a href=""><span class="crayon">#</span>webdev</a>
+                                                <a href=""><span class="crayon">#</span>programming </a>  
+                                            </div> 
+                                           
+                                        </div>
+                                        <div>
+                                            <h1 class="card-title mt-3">Functions, Parameters and Return Values</h1>
+                                            <div class="hashtags">
+                                                <a href=""><span class="crayon">#</span>beginners</a>
+                                                <a href=""><span class="crayon">#</span>codenewbie</a>
+                                                <a href=""><span class="crayon">#</span>webdev</a>
+                                                <a href=""><span class="crayon">#</span>programming </a>  
+                                            </div> 
+                                           
+                                        </div>
+                                        
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none d-lg-block col-lg-3">
+                        <!-- Contenido de Arce Aside 2 -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">DEV is a community of 499,769 amazing developers</h5>
+                                <p class="card-text">We're a place where coders share, stay up-to-date and grow their careers.</p>
+                                <button type="button" class="btn btn-primary">Primary</button>
+                                <br>
+                                <button type="button" class="btn btn-light">Light</button>
+                            </div>
+                        </div>
+    
+                        <div class="card articles">
+                            <div class="card-body">
+                                <a href="#"class="stretched-link" class="text-right">PE offers limited scholarships from 1k to 4k for diversity and financial hardship</a>
+                                <h6 class="card-text">education</h6>
+                            </div>
+    
+                            <div class="card-body">
+                                <a href="#"class="stretched-link" class="text-right">Learn more than just 'coding.' Learn the entire design process:</a>
+                                <h6 class="card-text">education</h6>
+                            </div>
+    
+                            <div class="card-body">
+                                <a href="#"class="stretched-link" class="text-right">Fcal - Open source cross platform calculator for programmers</a>
+                                <h6 class="card-text">collabs</h6>
+                            </div>
+                            
+                            <div class="card-body">
+                                <a href="#"class="stretched-link" class="text-right">QA Platform Engineer</a>
+                                <h6 class="card-text">jobs</h6>
+                            </div>
+                            
+                            <div class="card-body">
+                                <a href="#"class="stretched-link" class="text-right">Free Clear Explanations of Fundamental Concepts in Software - in plain english with hand-drawn illustrations</a>
+                                <h6 class="card-text">education</h6>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="#"  class="stretched-link d-flex justify-content-center">Create a Listing</a>
+                                </div>
+                            </div>
+    
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <h6 class="card-text d-flex justify-content-start">#news</h6>
+                                    </div>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">tsParticles 1.18.11 released</a>
+                                    <br>
+                                    <span class="badge badge-secondary">New</span>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">Git Cheat sheet</a>
+                                    <br>
+                                    <span class="badge badge-secondary">New</span>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">Open Source Project: Available for Contributiont</a>
+                                    <br>
+                                    <h6> 2 comments </h6>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">Game Dev Digest — Issue #69 - Editor Scripting, Behind The Games, and much more!</a>
+                                    <br>
+                                    <span class="badge badge-secondary">New</span>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">#codevember - 6 - Starry Night - Made with tsParticles</a>
+                                    <br>
+                                    <span class="badge badge-secondary">New</span>
+                                </div>
+    
+                                <div class="col"> 
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-text d-flex justify-content-start">#help</h6>
+                                        </div>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Why doesn't my custom canvas display when using the same Graphics context?</a>
+                                        <br>
+                                        <span class="badge badge-secondary">New</span>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Playing Dota 2 Made Easier By Using Fritz Box</a>
+                                        <br>
+                                        <span class="badge badge-secondary">New</span>
+                                    </div>
+                                </div>
+    
+                                <div class= "col"> 
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-text d-flex justify-content-start">#discuss</h6>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">Design Resources For Developers</a>
+                                    <h6 class="card-text">1 comment</h6>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">Have you built any projects with Svelte?</a>
+                                    <h6 class="card-text">21 comments</h6>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">Benford's Law in 2020 US Election</a>
+                                    <br>
+                                    <span class="badge badge-secondary">New</span>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">Your website sucks! And I'll tell you why (ROUND 2) ⚡️⚡️</a>
+                                    <h6 class="card-text"> 40 comments</h6>
+                                </div>
+    
+                                <div class="card-body">
+                                    <a href="#"class="stretched-link" class="text-right">Certifications - worth it or waste?</a>
+                                    <h6 class="card-text"> 4 comments</h6>
+                                </div>
+    
+                                <div class= "col"> 
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-text d-flex justify-content-start">#explaininlikeimfive</h6>
+                                        </div>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Is it worth using OOP in JS?</a>
+                                        <h6 class="card-text"> 1 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Step by step for javascript: how do I start?.</a>
+                                        <h6 class="card-text"> 19 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">How to convert Adobe XD to React Native?</a>
+                                        <h6 class="card-text"> 3 comments</h6>
+                                    </div>
+                                </div>
+    
+                                <div class= "col"> 
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-text d-flex justify-content-start">#Challenge</h6>
+                                        </div>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Daily Challenge #304 - Consecutive Letters</a>
+                                        <h6 class="card-text"> 11 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">My #100DOC - Day 73</a>
+                                        <br>
+                                        <span class="badge badge-secondary">New</span>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">My #100DOC - Day 72</a>
+                                        <br>
+                                        <span class="badge badge-secondary">New</span>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">My #100DOC - Day 71</a>
+                                        <br>
+                                        <span class="badge badge-secondary">New</span>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">My #100DOC - Day 71</a>
+                                        <br>
+                                        <span class="badge badge-secondary">New</span>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">My #100DOC - Day 70</a>
+                                        <br>
+                                        <span class="badge badge-secondary">New</span>
+                                    </div>
+                                </div>
+    
+                                <div class= "col"> 
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-text d-flex justify-content-start">#meta</h6>
+                                        </div>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Have you ever contributed to DEV?</a>
+                                        <h6 class="card-text"> 15 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Reddit In Comics Style</a>
+                                        <h6 class="card-text"> 1 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">HoneyByte: Get a Taste for Sampling</a>
+                                        <h6 class="card-text"> 2 comments</h6>
+                                    </div>
+                                </div>
+                                
+                                <div class= "col"> 
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-text d-flex justify-content-start">#Watercool</h6>
+                                        </div>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Have you ever code when you were high? 🥃🤪</a>
+                                        <h6 class="card-text"> 19 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">Have you ever been forced to learn a tech you do not like?</a>
+                                        <h6 class="card-text"> 37 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">What editor, browser and terminal do you use?</a>
+                                        <h6 class="card-text"> 79 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">LinkedIn changed its UI !! What's your opinion</a>
+                                        <h6 class="card-text"> 13 comments</h6>
+                                    </div>
+    
+                                    <div class="card-body">
+                                        <a href="#"class="stretched-link" class="text-right">4 ways to level up your life</a>
+                                        <h6 class="card-text"> 12 comments</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin de segundo aside -->
+                    </div>
+                </div>
+           
+        </div>
+        <div id="footer" class=" container-fluid">
+            <div class="row d-flex flex-nowrap flex-column-reverse flex-md-row">
+                <div class="col-12 col-md-4 info-redes">
+                  <img class="img-logo" src="images/icon_nav/apple-icon.png" alt="">
+                  <p class="info_community">A constructive and inclusive social network. Open source and radically transparent.
+                  </p>
+                  <img class="reds red-icon" src="images/icon_nav/twitter-logo.svg" alt="">
+                  <img class="reds red-icon" src="images/icon_nav/facebook.svg" alt="">
+                  <img class="reds red-icon" src="images/icon_nav/github.svg" alt="">
+                  <img class="reds red-icon" src="images/icon_nav/instagram.svg" alt="">
+                  <img class="reds red-icon" src="images/icon_nav/twitch.svg" alt="">
+                  <p>DEV Community copyright 2016 - 2020</p>
+                  <p>Built on <a href="#" target="_blank">Forem </a>-- the <a href="#"
+                      target="_blank">open source</a>
+                    software that powers <a href="#" target="_blank">DEV</a> and
+                    other inclusive communities.</p>
+                  <p>Made with love and <a href="#" target="_blank">Ruby on Rails.</a></p>
+                </div>
+                <div class="col-12 col-md-7 col-lg-6 col-xl-7 d-flex justify-content-between links_group">
+                  <div class="d-flex flex-column">
+                    <a class="a-f" href="#" target="_blank">Home</a>
+                    <a class="a-f" href="#" target="_blank">Reading List</a>
+                    <a class="a-f" href="#" target="_blank">Listings</a>
+                    <a class="a-f" href="#" target="_blank">Podcasts</a>
+                    <a class="a-f" href="#" target="_blank">Videos</a>
+                    <a class="a-f" href="#" target="_blank">Tags</a>
+                  </div>
+          
+                  <div class="d-flex flex-column">
+                    <a class="a-f" href="#" target="_blank">Code of conduct</a>
+                    <a class="a-f" href="#" target="_blank">FAQ</a>
+                    <a class="a-f" href="#" target="_blank">DEV shop</a>
+                    <a class="a-f" href="#" target="_blank">Sponsors</a>
+                    <a class="a-f" href="#" target="_blank">About</a>
+                    <a class="a-f" href="#" target="_blank">Privacy Policy</a>
+                  </div>
+          
+                  <div class="d-flex flex-column">
+                    <a class="a-f" href="#" target="_blank">Terms of use</a>
+                    <a class="a-f" href="#" target="_blank">Contact</a>
+                    <a class="a-f" href="/write-post.html" target="_blank"> <b>Write a post</b></a>
+                  </div>
+                </div>
+                <img class="d-none d-lg-block perezoso" src="images/changuito.png" alt="">
+              </div>
+        </div>
+
+        <script
+src="https://code.jquery.com/jquery-3.5.1.min.js"
+integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <script src="./js/library/moment.min.js"></script>
+        <script src="./js/post.js"></script>
+</body>
+</html>

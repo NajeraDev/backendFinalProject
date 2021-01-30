@@ -1,0 +1,7 @@
+applications:
+- name: backendChallenge
+  random-route: true
+  memory: 128M
+  buildpack: nodejs_buildpack
+  
+  
